@@ -1,0 +1,37 @@
+version: '3'
+
+services:
+  gitlab:
+    image: gitlab/gitlab-ce:15.1.2-ce.0
+    restart: always
+    environment:
+      GITLAB_OMNIBUS_CONFIG: |
+        external_url 'http://gitlab.localhost'
+    ports:
+     - '2222:22'
+     - '5050:5050'
+     - '80:80'
+     - '443:443'
+    volumes:
+     - ./config/gitlab:/etc/gitlab
+     - ./logs/gitlab:/var/log/gitlab
+     - ./data:/var/opt/gitlab
+    networks:
+      - gitlab
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:alpine
+    container_name: gitlab_runner
+    restart: unless-stopped
+    links:
+        - gitlab
+    depends_on:
+      - gitlab
+    volumes:
+      - ./config/gitlab-runner:/etc/gitlab-runner
+      - /var/run/docker.sock:/var/run/docker.sock
+    networks:
+      - gitlab
+
+networks:
+  gitlab:
