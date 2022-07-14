@@ -4,7 +4,7 @@
 
 After run.
 
-```sh
+```shell
 docker-compose up -d
 ```
 
