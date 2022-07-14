@@ -1,8 +1,8 @@
-# gitlab-locally
+# :fox_face: gitlab-locally
 
 Run locally a gitlab-ce and a gitlab runner with docker.
 
-## Runnning Gitlab & Runner
+## :flags: Runnning Gitlab & Runner
 
 To run locally, you must have docker installed.
 
@@ -20,7 +20,7 @@ docker container ps
 
 Check your local GitLab in http://gitlab.localhost/ 
 
-## Register Runner
+## :joystick: Register Runner
 
 To register the gitlab runner into gitlab, run this command and fill the form:
 
@@ -47,7 +47,7 @@ ruby:2.7
 Runner registered successfully. Feel free to start it, but if it's running already the config should be automatically reloaded! 
 ```
 
-## Extra config
+## :game_die: Extra config
 
 Edit the `./config/gitlab-runner/config.toml` file and add `extra_hosts = ["gitlab.localhost:172.17.0.1"]` extra args into `[runners.docker]` section, like this.
 
