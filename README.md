@@ -1,6 +1,6 @@
 # :fox_face: gitlab-locally
 
-Run locally a gitlab-ce and a gitlab runner with docker.
+Run locally your gitlab-ce and a gitlab runner with docker.
 
 ## :flags: Runnning Gitlab & Runner
 
