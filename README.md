@@ -30,7 +30,7 @@ Runtime platform                                    arch=amd64 os=linux pid=35 r
 Running in system-mode.                            
                                                    
 Enter the GitLab instance URL (for example, https://gitlab.com/):
-http://gitlab/
+http://172.17.0.1:80/
 Enter the registration token:
 <get your token from GitLab > Admin Area > Overview > Runners > Register an instance runner>
 Enter a description for the runner:
@@ -54,7 +54,7 @@ Edit the `./config/gitlab-runner/config.toml` file and add `extra_hosts = ["gitl
 ```toml
 [[runners]]
   name = "d0dd48cad767"
-  url = "http://gitlab/"
+  url = "http://172.17.0.1:80/"
   token = "KyHvAgn4mmPG4CKEBCac"
   executor = "docker"
   [runners.custom_build_dir]
